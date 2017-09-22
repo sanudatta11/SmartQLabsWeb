@@ -1,0 +1,27 @@
+DirectoryIndex index.php
+Options -Indexes
+Options +FollowSymLinks
+RewriteEngine On
+
+#Adding Rewrite Rules
+RewriteRule ^main/$ main/main.php
+RewriteRule ^main$ main/main.php
+RewriteRule ^main/counters$ main/addcounter.php
+RewriteRule ^main/counters/$ main/addcounter.php
+RewriteRule ^main/qr/$ main/qrcode.php
+RewriteRule ^signup/$ main/signup.php
+RewriteRule ^signup$ main/signup.php
+RewriteRule ^signup/post/$ submit/signup.php
+RewriteRule ^main/success/$ main/signup_finish.php
+RewriteRule ^main/success$ main/signup_finish.php
+RewriteRule ^login/post/$ submit/login.php
+RewriteRule ^main/dash/$ main/landing.php
+RewriteRule ^main/dash$ main/landing.php
+RewriteRule ^add$ main/addsignup.php
+RewriteRule ^add/$ main/addsignup.php
+RewriteRule ^add/post/$ main/addsignup_post.php
+RewriteRule ^add/success/$ main/add_success.php
+RewriteRule ^add/success$ main/add_success.php
+RewriteRule ^logout/$ main/logout.php
+RewriteRule ^logout$ main/logout.php
+RewriteRule ^logout$ main/logout.php

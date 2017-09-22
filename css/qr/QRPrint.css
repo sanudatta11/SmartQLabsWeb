@@ -1,0 +1,38 @@
+
+h1 {
+    font-family: 'Sura', serif;
+    font-size: 50px;
+    text-align: center;
+    color: #857aa8;
+    padding-top: 10px;
+}
+
+.container-gradient {
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    box-shadow: 5px 5px 5px 3px #888888;
+
+}
+
+.container-gradient-second {
+    height: 335px;
+    width: 100%;
+}
+
+#text {
+    width: 50%;
+    background-color: white;
+    color: black;
+    display: none;
+}
+
+body {
+    background-color: #fcf7f7;
+}
+
+.moveTopmost {
+    height: 120px;
+    width: 350px;
+    position: fixed;
+}

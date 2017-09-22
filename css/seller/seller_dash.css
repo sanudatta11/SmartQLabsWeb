@@ -1,0 +1,341 @@
+.nav-wrapper {
+    background-color: #002642;
+}
+
+body {
+    background-color: #ededed;
+}
+
+.titlePush {
+
+    height: 80px;
+}
+
+.title_box {
+    background-color: white;
+    padding: 2px;
+    border-bottom: 1px solid #002642;
+}
+
+html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
+
+.h4-white {
+    font-family: 'Raleway', sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Pacifico', cursive;
+    color: #021026;
+    text-align: center;
+}
+
+.card-panel {
+    background-color: #002642;
+    margin-top: 5px;
+    height: 122px;
+}
+
+.card-panel2 {
+    background-color: #575c82;
+    padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 30px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.moveUp {
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+.moveUp:hover {
+    top: -7px;
+    cursor: move;
+    /*box-shadow: 10px 10px grey;*/
+}
+
+.enhanceUI {
+    background-color: white;
+    min-height: 10px;
+    color: #291a44;
+    border: 0.5px solid #463566;
+    box-shadow: 10px 10px 5px grey;
+    font-size: 32px;
+    align: center;
+}
+
+.middle {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.middle2 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: #002642;
+    font-size: 15px;
+}
+
+.middle-colored {
+    text-align: center;
+    color: #021026;
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.chip {
+    background-color: #ffffff;
+}
+
+.roundC {
+    border-radius: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+.row-center {
+    text-align: center
+}
+
+.fixed_button {
+    width: 300px;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    background-color: #575c82;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: oblique;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.fixed_button_append {
+    width: 300px;
+    height: 400px;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    background-color: #575c82;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: oblique;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.orderDone {
+    padding: 3px;
+}
+
+.orderDone:hover {
+    color: #6cf26a;
+    cursor: hand;
+}
+
+.orderCancelled {
+    padding: 3px;
+}
+
+.orderCancelled:hover {
+    color: red;
+    cursor: hand;
+}
+
+.orderWaiting {
+    padding: 3px;
+
+}
+
+.orderWaiting:hover {
+    color: yellow;
+    cursor: hand;
+}
+
+smaller {
+    font-size: 20px;
+}
+
+.middle-left {
+    text-align: left;
+}
+
+.card-queueList {
+    /*box-shadow: 10px 10px 5px 3px #8ca9d8;
+    border: 1px solid blue;*/
+    border: 1px dashed #ddd;
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #eee;
+    height: 430px;
+    width: 727px;
+}
+
+hr.style11 {
+    height: 6px;
+    background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+}
+
+hr.style15 {
+    border-top: 4px double #8c8b8b;
+    text-align: center;
+}
+
+hr.style15:after {
+    content: '\002665';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background: #f0f0f0;
+    color: #8c8b8b;
+    font-size: 18px;
+}
+
+.navbar-heading {
+    font-size: 46px;
+}
+
+hr.style8 {
+    border-top: 1px solid #8c8b8b;
+    border-bottom: 1px solid #fff;
+}
+
+hr.style8:after {
+    content: '';
+    display: block;
+    margin-top: 2px;
+    border-top: 1px solid #8c8b8b;
+    border-bottom: 1px solid #fff;
+}
+
+clock {
+    align: right;
+}
+
+.orderList {
+    width: 900px;
+}
+
+.showBlue {
+    color: #463566;
+    font-weight: bold;
+
+}
+
+.getOTP {
+    align: center;
+}
+
+td {
+    padding-right: 8px;
+}
+
+th {
+    padding: 13px 14px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+.scrollTable {
+    overflow-y: scroll;
+    height: 330px;
+    display: block;
+    width: 750px;
+}
+
+.scrollTable {
+    padding-right: 100px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn-grp {
+    padding-left: 30px;
+}
+
+td {
+    overflow-y: hidden;
+}
+
+.blackout {
+
+    opacity: 0.4;
+    transition: all 0.5s;
+    -webkit-transition: all 1.0s;
+}
+
+.slideOffBlackOut {
+    opacity: 0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 10%;
+    left: 7%;
+}

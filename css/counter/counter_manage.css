@@ -1,0 +1,202 @@
+.nav-wrapper{
+  background-color: #002642;
+}
+body {
+  background-color: #ededed;
+}
+.titlePush {
+
+  height: 80px;
+}
+.title_box {
+  background-color: white;
+  padding: 2px;
+  border-bottom: 1px solid #002642;
+  text-align: center;
+}
+html {
+   font-family: GillSans, Calibri, Trebuchet, sans-serif;
+ }
+.h4-white{
+  font-family: 'Raleway', sans-serif;
+   color: #ffffff;
+   text-align: center;
+ }
+h4{
+  font-family: 'Pacifico', cursive;
+  color: #021026;
+  text-align: center;
+}
+.card-panel {
+  background-color: #002642;
+  margin-top: 5px;
+  height: 122px;
+}
+.card-panel2 {
+  background-color: #575c82;
+  padding: 10px;
+  padding-top:30px;
+  padding-bottom: 30px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.card-panel-top {
+    background-color: #575c82;
+    margin-top: 5px;
+    height: 184px;
+}
+.moveUp{
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+}
+.moveUp:hover {
+  top: -7px;
+  cursor:move;
+  /*box-shadow: 10px 10px grey;*/
+}
+.enhanceUI {
+  background-color:#acb4ef;
+}
+.middle {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  color: #ffffff;
+  font-size: 25px;
+}
+.middle2 {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  color: #002642;
+  font-size: 15px;
+}
+.middle-colored {
+  text-align: center;
+  color: #021026;
+  font-size: 30px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.chip {
+  background-color: #ffffff;
+}
+.roundC {
+  border-radius: 100px;
+  width: 100%;
+  text-align: center;
+}
+.row-center {
+  text-align: center
+}
+
+smaller {
+  font-size: 20px;
+}
+.middle-left{
+  text-align: left;
+}
+.card-queueList {
+  /*box-shadow: 10px 10px 5px 3px #8ca9d8;
+  border: 1px solid blue;*/
+  border: 1px dashed #ddd;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #eee;
+  height: 500px;
+}
+
+.waves-light {
+  -webkit-transition-duration: 0.4s; /* Safari */
+ transition-duration: 0.4s;
+  background-color: #327cad;
+}
+
+
+.button:hover  {
+  background-color: #07293f;
+
+}
+stayHidden {
+  display: none;
+}
+.center-btn {
+  text-align: left ;
+  padding-left: 20px;
+}
+.btn-grp {
+  padding-left: 30px;
+}
+.counterCard {
+background-color: #4166a0;
+}
+.material-icons {
+  cursor:hand;
+}
+material-icons:hover {
+  background-color: red;
+  color: red;
+
+}
+.navbar-heading {
+  font-size: 46px;
+}
+
+
+/*add this CSS*/
+
+#closeIt {
+  float: right;
+  font-size: 16px;
+  color: '#b6ccef';
+  height: 24px;
+  width: 34px;
+  position: relative;
+  padding-left: 100px;
+}
+
+
+#closeIt:hover {
+  background-color: 'b6ccef';
+  cursor: pointer;
+}
+
+
+
+
+li {
+  padding-right: 300px;
+  font-color: white;
+}
+.caret {
+  color: white;
+}
+.whiteContainer {
+  color: white;
+}
+
+.card-panel-top {
+    background-color: #575c82;
+    margin-top: 5px;
+    height: 184px;
+}
+
+.topRight {
+    position: absolute;
+    top: 100;
+    right: 0;
+    background-color: red;
+
+}
+
+.box {
+    height: 120px;
+    width: 350px;
+    position: fixed;
+    top: 60px;
+    right: 131px;
+    filter: alpha(opacity=50);
+    display: none;
+
+}
+
+.blue {
+    font-size: 16px;
+}

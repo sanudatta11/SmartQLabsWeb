@@ -1,0 +1,16 @@
+{
+  "0": {
+    "serial": 10,
+    "customer_name": "Bisso",
+    "queueuid": "A2112"
+  },
+  "1": {
+    "serial": 20,
+    "customer_name": "Sanu",
+    "queueuid": "A2111"
+  },
+  "storeuid": 1,
+  "counteruid": "1",
+  "status": true,
+  "status_code": 200
+}

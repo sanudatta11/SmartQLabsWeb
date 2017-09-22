@@ -1,0 +1,112 @@
+Number of APIs - 4
+
+API 1:QR Code Scan API
+
+    Request:
+        Email - 'email'
+        Qr Code Data - 'qr_data'
+    Response:
+        ID - (Id of the Live Queue Status) //need to save -'id'
+        status_code
+            200 = Queue Allocated
+            300 = Posted in virtual Standing
+            400 = No Counter Active for specific QR Code
+            402 = Wrong Data Format
+            500 = PDO Exception
+        Queue Details:
+            Queue_No - 'queue_no'
+            Store_ID - 'store_id'0
+            Counter_id - 'counter_id'
+            Group ID - 'group_id'
+            time = 'time'
+
+            Optional:
+               'turn' = True
+               //This will happen when you are the first person in a queue and need to arrive
+               //Now only
+
+               //Call Is completed API for knowing that the queue is complete for that person
+               //Status = True. Add that to Android History
+
+        Store Details:
+            Name - 'comp_name'
+            Info - 'comp_info'
+            URL(Image) - 'image_url'
+            Latitude - 'latitude'
+            Longitude - 'longitude'
+
+API 2:Suggestions API
+
+    Request:
+        Latitude
+        Longitude
+
+    Response:
+        status - 'status'
+            True
+            False
+        status code- 'status_code'
+            400 = Invalid or No Data
+            200 = All good
+            300 = No Suggestions
+        Array:
+            Name
+            Info
+            URL(Image)
+            Latitude
+            Longitude
+            Type
+
+API 3: Update Queue Status
+
+    Request:
+        ID -'id'
+        Store_ID - 'store_id'
+        Counter_ID - 'counter_id'
+        Group ID - 'group_id'
+        Email - 'email'
+
+        //Status Codes = 'status_code'
+        200 = All good
+        201 = No Update in Queue Status
+        500 = PDO Exception
+        400 = No Queue Found for the given data
+        420 = Fatal Error while checking person before
+        430 = Fatal Error while checking Persons in Virtual Queue for that store
+        540 = Incomplete Data Provided
+        430 = Data Given Doesnot Match with Records
+
+    Response:
+        Time
+        Queue No
+
+        //Optional
+        'counter_id'
+        //If Present , he has been allocated to a  Fixed queue from virtual queue
+
+        //Optional
+        'turn' = True
+            //This will happen when you are the first person in a queue and need to arrive
+            //Now only
+
+            //Call Is completed API for knowing that the queue is complete for that person
+            //Status = True. Add that to Android History
+
+API 4 : Cancel Queue API
+
+    Request:
+        ID -'id'
+        Store_ID - 'store_id'
+        Counter_ID - 'counter_id'
+        Email- 'email'
+        Group ID - 'group_id'
+
+    Response:
+        Status: - 'status'
+            True - Success
+            False - Some Error Occured
+        Status Code: = 'status_code'
+            200 - Ok
+            400 - Not Found Queue
+            500 - PDO Exception
+            540 = Incomplete Data
