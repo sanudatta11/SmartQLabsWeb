@@ -8,7 +8,7 @@
 
 //Production
 
-$host = "qit-db.co8zric1dcsi.us-east-1.rds.amazonaws.com:3306";
+$host = "qit.co8zric1dcsi.us-east-1.rds.amazonaws.com:3306";
 $dbname = "qit";
 $username_db = "root";
 $password_db = "mysqlmysql";
