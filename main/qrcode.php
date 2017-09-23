@@ -28,7 +28,7 @@ if (isset($_SESSION) && $_SESSION['admin'] == 1) {
 </head>
 <body>
 <div class="container-gradient">
-    <h1><b>QIt - Scan the QR to Queue yourself.</b></h1>
+    <h1><b>Scan the QR to Queue yourself.</b></h1>
 </div>
 <br>
 <br>
