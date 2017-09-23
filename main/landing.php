@@ -13,7 +13,7 @@ if ($_SESSION['admin'] == 1) {
     <html>
     <head>
         <meta charset="utf-8">
-        <title>QIt Admin Analytics</title>
+        <title>Admin Analytics</title>
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
@@ -508,7 +508,7 @@ if ($_SESSION['admin'] == 1) {
     <html>
     <head>
         <meta charset="utf-8">
-        <title>QIt Seller Dashboard</title>
+        <title>Seller Dashboard</title>
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
