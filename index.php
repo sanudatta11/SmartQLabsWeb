@@ -23,7 +23,7 @@
 
 <div id="particles">
     <div id="intro">
-        <h1>Welcome to Smart Q Labs</h1>
+        <h1>Welcome to S-Q-L</h1>
         <p>With Smart Q Labs say no to Queue.</p>
         <a href="/main/" class="btn">Lets Go!</a>
     </div>
