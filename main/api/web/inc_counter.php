@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 4/9/17
- * Time: 9:58 PM
- */
 session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/dependencies/check.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/confidential/connector.php';

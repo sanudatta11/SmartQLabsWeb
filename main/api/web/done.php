@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 31/8/17
- * Time: 1:19 AM
- */
 
 session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/dependencies/check.php';

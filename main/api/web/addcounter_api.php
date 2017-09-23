@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 3/9/17
- * Time: 7:51 AM
- */
 /*
  * Status Codes
  * 200 = All Good Counter Added

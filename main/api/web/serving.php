@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 31/8/17
- * Time: 8:38 AM
- */
 
 /*
  *Status Codes
