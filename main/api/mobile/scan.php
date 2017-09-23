@@ -75,7 +75,8 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
                 {
                     $new_data = array();
                     $new_data['messages'] = array();
-                    array_push($new_data['messages'],"Sorry Previously Scanned!");
+                    $temp['text'] = "Sorry Previously Scanned!";
+                    array_push($new_data['messages'],$temp);
                     echo json_encode($new_data);
                     die();
                 }
@@ -87,6 +88,15 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
             $data['status_code'] = 500;
             $data['message'] = $e->getMessage();
             $data['errorinfo'] = $e->errorInfo;
+            if(isset($_GET['bot']) && $_GET['bot'] == 1)
+            {
+                $new_data = array();
+                $new_data['messages'] = array();
+                $temp['text'] = "PDO Exception! Contact Admin!";
+                array_push($new_data['messages'],$temp);
+                echo json_encode($new_data);
+                die();
+            }
             echo json_encode($data);
             die();
         }
@@ -110,6 +120,15 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
             $data['status_code'] = 500;
             $data['message'] = $e->getMessage();
             $data['errorinfo'] = $e->errorInfo;
+            if(isset($_GET['bot']) && $_GET['bot'] == 1)
+            {
+                $new_data = array();
+                $new_data['messages'] = array();
+                $temp['text'] = "PDO Exception! Contact Admin!";
+                array_push($new_data['messages'],$temp);
+                echo json_encode($new_data);
+                die();
+            }
             echo json_encode($data);
             die();
         }
@@ -166,6 +185,15 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
                 $data['status_code'] = 500;
                 $data['message'] = $e->getMessage();
                 $data['errorinfo'] = $e->errorInfo;
+                if(isset($_GET['bot']) && $_GET['bot'] == 1)
+                {
+                    $new_data = array();
+                    $new_data['messages'] = array();
+                    $temp['text'] = "PDO Exception! Contact Admin!";
+                    array_push($new_data['messages'],$temp);
+                    echo json_encode($new_data);
+                    die();
+                }
                 echo json_encode($data);
                 die();
             }
@@ -212,11 +240,16 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
             {
                 $new_data = array();
                 $new_data['messages'] = array();
-                array_push($new_data['messages'],"Queued Properly!");
-                array_push($new_data['messages'],"Your Queue Code is ".$data['queue_code']);
-                array_push($new_data['messages'],"Your Position is ".$data['queue']['queue_no']);
-                array_push($new_data['messages'],"Your Counter Id is ".$data['queue']['counter_id']);
-                array_push($new_data['messages'],"Your OTP is ".$data['otp']);
+                $temp['text'] = "Queued Properly!";
+                array_push($new_data['messages'],$temp);
+                $temp['text'] = "Your Queue Code is ".$data['queue_code'];
+                array_push($new_data['messages'],$temp);
+                $temp['text'] = "Your Position is ".$data['queue']['queue_no'];
+                array_push($new_data['messages'],$temp);
+                $temp['text'] = "Your Counter Id is ".$data['queue']['counter_id'];
+                array_push($new_data['messages'],$temp);
+                $temp['text'] = "Your OTP is ".$data['otp'];
+                array_push($new_data['messages'],$temp);
                 echo json_encode($new_data);
                 die();
             }
@@ -302,11 +335,16 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
             {
                 $new_data = array();
                 $new_data['messages'] = array();
-                array_push($new_data['messages'],"Queued Properly!");
-                array_push($new_data['messages'],"Your Queue Code is ".$data['queue_code']);
-                array_push($new_data['messages'],"Your Position is ".$data['queue']['queue_no']);
-                array_push($new_data['messages'],"Your Counter Id is ".$data['queue']['counter_id']);
-                array_push($new_data['messages'],"Your OTP is ".$data['otp']);
+                $temp['text'] = "Queued Properly!";
+                array_push($new_data['messages'],$temp);
+                $temp['text'] = "Your Queue Code is ".$data['queue_code'];
+                array_push($new_data['messages'],$temp);
+                $temp['text'] = "Your Position is ".$data['queue']['queue_no'];
+                array_push($new_data['messages'],$temp);
+                $temp['text'] = "Your Counter Id is ".$data['queue']['counter_id'];
+                array_push($new_data['messages'],$temp);
+                $temp['text'] = "Your OTP is ".$data['otp'];
+                array_push($new_data['messages'],$temp);
                 echo json_encode($new_data);
                 die();
             }
@@ -321,7 +359,8 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
         {
             $new_data = array();
             $new_data['messages'] = array();
-            array_push($new_data['messages'],"No Counter Active!");
+            $temp['text'] = "No Counter Active!";
+            array_push($new_data['messages'],$temp);
             echo json_encode($new_data);
             die();
         }
@@ -335,7 +374,8 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
     {
         $new_data = array();
         $new_data['messages'] = array();
-        array_push($new_data['messages'],"Wrong Data Provided!");
+        $temp['text'] = "Wrong Data Provided!";
+        array_push($new_data['messages'],$temp);
         echo json_encode($new_data);
         die();
     }
