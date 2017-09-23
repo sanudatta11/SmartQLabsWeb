@@ -161,7 +161,7 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <h2><span class="text_color">Smart Q Lab</span> An out-of-the-box app</h2>
+        <h2><span class="text_color">Smart Q Lab</span></h2>
         <h4>We are here to disrupt the existing queue system</h4>
     </div>
     <div class="page-scroll">
