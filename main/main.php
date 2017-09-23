@@ -35,7 +35,7 @@ require_once("templates/header_template.php");
                     <div class="team boxed-grey">
                         <div class="inner">
                             <h5>Soumyajit <br> Dutta </h5>
-                            <p class="subtitle">Back-End Developer</p>
+                            <p class="subtitle">Back-End Developer and DevOps</p>
                             <div class="avatar"><img src="https://image.ibb.co/jssgRk/me.jpg" alt="" class="img-responsive img-circle" style="height: 170px; width: 170px" /></div>
                         </div>
                     </div>
@@ -69,9 +69,9 @@ require_once("templates/header_template.php");
                 <div class="wow bounceInUp" data-wow-delay="1s">
                     <div class="team boxed-grey">
                         <div class="inner">
-                            <h5>Siddhartha<br> Trivedi</h5>
-                            <p class="subtitle">Design and Business Analyst</p>
-                            <div class="avatar"><img src="https://image.ibb.co/enBfK5/sid.jpg" style="height: 170px; width: 170px" alt="" class="img-responsive img-circle" /></div>
+                            <h5>Rohit<br> Swami</h5>
+                            <p class="subtitle">PWA and Frontend Developer</p>
+                            <div class="avatar"><img src="https://image.ibb.co/j8STpQ/rowhitsucks2.jpg" style="height: 170px; width: 170px" alt="" class="img-responsive img-circle" /></div>
 
                         </div>
                     </div>
