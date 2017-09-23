@@ -105,6 +105,8 @@ if (check($_GET['id']) && check($_GET['store_id']) && check($_GET['counter_id'])
 
     if ($find_querry->rowCount() > 0) {
         $test_querry->setFetchMode(PDO::FETCH_ASSOC);
+        $fall = $test_querry->fetch();
+        $serial = $fall['serial'];
         $find_querry->setFetchMode(PDO::FETCH_ASSOC);
         $temp = $find_querry->fetch();
 
@@ -115,11 +117,11 @@ if (check($_GET['id']) && check($_GET['store_id']) && check($_GET['counter_id'])
         if ($counteruid != -1 || $temp['counteruid'] != -1) {
             $counteruid = $temp['counteruid'];
             //Is  In a fixed Queue
-            $sql_statement = "SELECT COUNT(*) AS count FROM " . $dbname . ".live_queue WHERE storeuid = :sid AND counteruid = :cid AND id <= :id";
+            $sql_statement = "SELECT COUNT(*) AS count FROM " . $dbname . ".live_queue WHERE storeuid = :sid AND counteruid = :cid AND serial <= :serial";
             $find_querry = $mysql_conn->prepare($sql_statement);
             $find_querry->bindParam(':sid', $storeuid, PDO::PARAM_INT);
             $find_querry->bindParam(':cid', $counteruid, PDO::PARAM_INT);
-            $find_querry->bindParam(':id', $id, PDO::PARAM_INT);
+            $find_querry->bindParam(':serial', $serial, PDO::PARAM_INT);
             try {
                 $find_querry->execute();
             } catch (PDOException $e) {
