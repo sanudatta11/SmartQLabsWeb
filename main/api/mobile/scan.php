@@ -71,6 +71,14 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
             if ($find_query->rowCount() > 0) {
                 $data['status'] = False;
                 $data['status_code'] = 310;
+                if(isset($_GET['bot']) && $_GET['bot'] == 1)
+                {
+                    $new_data = array();
+                    $new_data['messages'] = array();
+                    array_push($new_data['messages'],"Sorry Previously Scanned!");
+                    echo json_encode($new_data);
+                    die();
+                }
                 echo json_encode($data);
                 die();
             }
@@ -200,6 +208,18 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
             $data['queue'] = $queue_details;
             $data['company'] = $cmp_details;
 
+            if(isset($_GET['bot']) && $_GET['bot'] == 1)
+            {
+                $new_data = array();
+                $new_data['messages'] = array();
+                array_push($new_data['messages'],"Queued Properly!");
+                array_push($new_data['messages'],"Your Queue Code is ".$data['queue_code']);
+                array_push($new_data['messages'],"Your Position is ".$data['queue']['queue_no']);
+                array_push($new_data['messages'],"Your Counter Id is ".$data['queue']['counter_id']);
+                array_push($new_data['messages'],"Your OTP is ".$data['otp']);
+                echo json_encode($new_data);
+                die();
+            }
 
             echo json_encode($data);
             die();
@@ -244,6 +264,14 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
                 $data['status_code'] = 500;
                 $data['message'] = $e->getMessage();
                 $data['errorinfo'] = $e->errorInfo;
+                if(isset($_GET['bot']) && $_GET['bot'] == 1)
+                {
+                    $new_data = array();
+                    $new_data['messages'] = array();
+                    array_push($new_data['messages'],"PDO Exception! Contact Admin.");
+                    echo json_encode($new_data);
+                    die();
+                }
                 echo json_encode($data);
                 die();
             }
@@ -270,18 +298,47 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
             $data['queue'] = $queue_details;
             $data['company'] = $cmp_details;
 
+            if(isset($_GET['bot']) && $_GET['bot'] == 1)
+            {
+                $new_data = array();
+                $new_data['messages'] = array();
+                array_push($new_data['messages'],"Queued Properly!");
+                array_push($new_data['messages'],"Your Queue Code is ".$data['queue_code']);
+                array_push($new_data['messages'],"Your Position is ".$data['queue']['queue_no']);
+                array_push($new_data['messages'],"Your Counter Id is ".$data['queue']['counter_id']);
+                array_push($new_data['messages'],"Your OTP is ".$data['otp']);
+                echo json_encode($new_data);
+                die();
+            }
+
             echo json_encode($data);
             die();
         }
     } else {
         $data['status'] = False;
         $data['status_code'] = 400;
+        if(isset($_GET['bot']) && $_GET['bot'] == 1)
+        {
+            $new_data = array();
+            $new_data['messages'] = array();
+            array_push($new_data['messages'],"No Counter Active!");
+            echo json_encode($new_data);
+            die();
+        }
         echo json_encode($data);
         die();
     }
 } else {
     $data['status'] = False;
     $data['status_code'] = 402;
+    if(isset($_GET['bot']) && $_GET['bot'] == 1)
+    {
+        $new_data = array();
+        $new_data['messages'] = array();
+        array_push($new_data['messages'],"Wrong Data Provided!");
+        echo json_encode($new_data);
+        die();
+    }
     echo json_encode($data);
     die();
 }
