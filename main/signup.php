@@ -108,8 +108,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dependencies/check.php';
                                     <div class="form-group">
                                         <label for="contract">Type of contract (preferred) : </label>
                                         <select class="form-control" id="contract">
-                                            <option>Only Q-It App</option>
-                                            <option selected="selected">Q-It App and Q-It analytics</option>
+                                            <option>Only Smart Q Labs App</option>
+                                            <option selected="selected">Smart Q Labs App and Smart Q Labs analytics</option>
                                             <option>Something else</option>
                                         </select>
                                     </div>

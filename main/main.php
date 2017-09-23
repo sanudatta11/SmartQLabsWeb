@@ -117,7 +117,7 @@ require_once("templates/header_template.php");
                         </div>
                         <div class="service-desc">
                             <h5>Airports</h5>
-                            <p>Q-It is a perfect app for frequent travellers. With Q-It say no to Queue at airport check-in and check-outs.</p>
+                            <p>Smart Q Labs is a perfect app for frequent travellers. With Smart Q Labs say no to Queue at airport check-in and check-outs.</p>
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@ require_once("templates/header_template.php");
                         </div>
                         <div class="service-desc">
                             <h5>Tourist Spots</h5>
-                            <p>Tourists spots witness some of the longest and most tiresome queues. Use Q-It to disrupt the queue and end  the endless waiting.</p>
+                            <p>Tourists spots witness some of the longest and most tiresome queues. Use Smart Q Labs to disrupt the queue and end  the endless waiting.</p>
                         </div>
                     </div>
                 </div>
@@ -145,7 +145,7 @@ require_once("templates/header_template.php");
                         </div>
                         <div class="service-desc">
                             <h5>Banks</h5>
-                            Tired of waiting in long queues in bank? Why not switch to Q-It and make your life a bit easier! Scan the QR code of Q-It and its done. Now just seat and relax untill your turn comes.
+                            Tired of waiting in long queues in bank? Why not switch to Smart Q Labs and make your life a bit easier! Scan the QR code of Smart Q Labs and its done. Now just seat and relax untill your turn comes.
                         </div>
                     </div>
                 </div>
@@ -159,7 +159,7 @@ require_once("templates/header_template.php");
                         </div>
                         <div class="service-desc">
                             <h5>Shops</h5>
-                            <p>Have to wait for hours in the shop? Thats really tresome. We know. So why not come and have the Q-It experience!</p>
+                            <p>Have to wait for hours in the shop? Thats really tresome. We know. So why not come and have the Smart Q Labs experience!</p>
                         </div>
                     </div>
                 </div>

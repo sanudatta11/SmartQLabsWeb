@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Q-It : Sign Up</title>
+    <title>Smart Q Labs : Sign Up</title>
 
     <?php include_once("header.php") ?>
     <style media="screen">
@@ -96,7 +96,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="index.html">
-                <h1>Q-It</h1>
+                <h1>Smart Q Labs</h1>
             </a>
         </div>
 
@@ -157,7 +157,7 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <h2><span class="text_color">Quit queue! Join Q-It!</h2>
+        <h2><span class="text_color">Quit queue! Join Smart Q Labs!</h2>
         <h4>Just fill the attached form and we will get in touch soon!</h4>
     </div>
     <div class="page-scroll">
@@ -205,7 +205,7 @@
                         </a>
                     </div>
                 </div>
-                <p>&copy;Q-It. All rights reserved.</p>
+                <p>&copy;Smart Q Labs. All rights reserved.</p>
                 <div class="credits">
                     <a href="#">With our technology, disrupt all queues and make life user!</a>
                 </div>

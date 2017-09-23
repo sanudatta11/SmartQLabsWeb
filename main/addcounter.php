@@ -38,7 +38,7 @@ if ($_SESSION['admin'] == 1):
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="navbar-heading" style="font-family: 'Indie Flower', cursive;"> &nbsp;Q-It</a>
+                <a href="#" class="navbar-heading" style="font-family: 'Indie Flower', cursive;"> &nbsp;Smart Q Labs</a>
                 <ul class="right hide-on-med-and-down">
                     <li id="increaseCounter"><a href="#"><i class="material-icons left">add</i>Add counter</a></li>
                     <li><a href="/main/dash/"><i class="material-icons left">arrow_back</i>Back to Dash</a></li>

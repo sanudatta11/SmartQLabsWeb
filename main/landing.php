@@ -295,7 +295,7 @@ if ($_SESSION['admin'] == 1) {
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="navbar-heading" style="font-family: 'Indie Flower', cursive;"> &nbsp;Q-It</a>
+                <a href="#" class="navbar-heading" style="font-family: 'Indie Flower', cursive;"> &nbsp;Smart Q Labs</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="/main/counters/"><i class="material-icons left">add_to_queue</i>Manage Counters</a>
                     </li>
@@ -647,7 +647,7 @@ if ($_SESSION['admin'] == 1) {
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <a href="#" class="navbar-heading" style="font-family: 'Indie Flower', cursive;"> &nbsp;Q-It</a>
+                <a href="#" class="navbar-heading" style="font-family: 'Indie Flower', cursive;"> &nbsp;Smart Q Lab</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="/logout/"><i class="material-icons left">subdirectory_arrow_right</i>Log Out</a></li>
                 </ul>

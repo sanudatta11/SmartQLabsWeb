@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Q-It - Disrupting Queues : Landing Page</title>
+    <title>Smart Q Labs - Disrupting Queues : Landing Page</title>
 
     <?php include_once("header.php") ?>
 
@@ -95,7 +95,7 @@
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="#">
-                <h1>Q-It</h1>
+                <h1>Smart Q Labs</h1>
             </a>
         </div>
 
@@ -103,6 +103,7 @@
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#intro">Home</a></li>
+                <li><a href="/add/">Add Suggestions</a></li>
                 <li><a href="#about">About the team</a></li>
                 <li><a href="#service">Customer</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -160,7 +161,7 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <h2><span class="text_color">Q-It</span> An out-of-the-box app</h2>
+        <h2><span class="text_color">Smart Q Lab</span> An out-of-the-box app</h2>
         <h4>We are here to disrupt the existing queue system</h4>
     </div>
     <div class="page-scroll">

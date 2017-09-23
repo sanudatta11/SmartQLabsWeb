@@ -9,7 +9,7 @@
                         </a>
                     </div>
                 </div>
-                <p>&copy;Q-It. All rights reserved.</p>
+                <p>&copy;Smart Q Lab. All rights reserved.</p>
                 <div class="credits">
                     <a href="#">With our technology, disrupt all queues and make life user!</a>
                 </div>
