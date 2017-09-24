@@ -7,11 +7,11 @@
  */
 require_once $_SERVER['DOCUMENT_ROOT'].'/confidential/connector.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/dependencies/check.php';
-
+$new_data = array();
+$new_data['messages'] = array();
 if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && check($_GET['otp']))
 {
-   $new_data = array();
-   $new_data['messages'] = array();
+
    /*
    $temp['text'] = "Sorry Previously Scanned!";
    array_push($new_data['messages'],$temp);
@@ -118,5 +118,9 @@ if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && c
 }
 else
 {
-
+    //PDO Exception
+    $temp['text'] = "Incomplete Data!";
+    array_push($new_data['messages'],$temp);
+    echo json_encode($new_data);
+    die();
 }
