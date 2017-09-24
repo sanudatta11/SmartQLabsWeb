@@ -503,4 +503,424 @@ if ($_SESSION['admin'] == 1) {
     </body>
     </html>
     <?php
-} 
+} elseif ($_SESSION['admin'] == 2 && isset($_SESSION['counteruid']) && !empty($_SESSION['counteruid'])) {
+    ?>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>Seller Dashboard</title>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+        <link rel="stylesheet" href="/css/seller/seller_dash.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link
+                href="https://fonts.googleapis.com/css?family=Quicksand"
+                rel="stylesheet">
+        <script
+                type="text/javascript"
+                src="https://www.gstatic.com/charts/loader.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link rel="stylesheet" href="  https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.css">
+
+        <?php
+        $start = 0;
+        $end = 1;
+        $hour_rating = array();
+        for ($i = 0; $i < 15; ++$i, ++$start, ++$end) {
+            $sql_statement = "SELECT COUNT(*) AS total FROM " . $dbname . ".analytics WHERE hour(time) >=:start AND hour(time)<:end AND storeuid = :sid LIMIT 1";
+            $find_obj = $mysql_conn->prepare($sql_statement);
+            $find_obj->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
+            $find_obj->bindParam(':start', $start, PDO::PARAM_INT);
+            $find_obj->bindParam(':end', $end, PDO::PARAM_INT);
+            $find_obj->execute();
+            $find_obj->setFetchMode(PDO::FETCH_ASSOC);
+            $data = $find_obj->fetch();
+            $hour_rating[$i] = $data['total'];
+        }
+        ?>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Year', 'Sales'],
+                    ['6-7 am', <?php echo $hour_rating[0] ?>],
+                    ['7-8 am', <?php echo $hour_rating[1] ?>],
+                    ['8-9 am', <?php echo $hour_rating[2] ?>],
+                    ['9-10 am', <?php echo $hour_rating[3] ?>],
+                    ['10-11 am', <?php echo $hour_rating[4] ?>],
+                    ['11-12 am', <?php echo $hour_rating[5] ?>],
+                    ['12-1 pm', <?php echo $hour_rating[6] ?>],
+                    ['1-2 pm', <?php echo $hour_rating[7] ?>],
+                    ['2-3 pm', <?php echo $hour_rating[8] ?>],
+                    ['3-4 pm', <?php echo $hour_rating[9] ?>],
+                    ['4-5 pm', <?php echo $hour_rating[10] ?>],
+                    ['5-6 pm', <?php echo $hour_rating[11] ?>],
+                    ['6-7 pm', <?php echo $hour_rating[12] ?>],
+                    ['7-8 pm', <?php echo $hour_rating[13] ?>],
+                    ['8-9 pm', <?php echo $hour_rating[14] ?>],
+                ]);
+
+                var options = {
+                    title: 'Time Slot analytics',
+                    curveType: 'function',
+                    legend: {position: 'bottom'}
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+                chart.draw(data, options);
+            }
+        </script>
+
+        <?php
+        //Per Hour Server
+        $sql_statement = "SELECT DATE(NOW()) as date";
+        $find_obj = $mysql_conn->prepare($sql_statement);
+        $find_obj->execute();
+        $data = $find_obj->fetch();
+        $date = $data['date'];
+        $served_per_hour = array();
+        $begin = 7;
+        for ($i = 0; $i < 15; ++$i, ++$begin) {
+            $sql_statement = "SELECT COUNT(*) AS total FROM qit.analytics WHERE storeuid = :sid AND time >=:start AND time < :end";
+            $find_obj = $mysql_conn->prepare($sql_statement);
+            $find_obj->bindParam(':sid', $_SESSION['storeuid']);
+            $start = ($date . ' ' . '0' . $begin . ':00:00');
+            $find_obj->bindParam(':start', $start);
+            $end = ($date . ' ' . '0' . ($begin + 1) . ':00:00');
+            $find_obj->bindParam(':end', $end);
+            $find_obj->execute();
+            $find_obj->setFetchMode(PDO::FETCH_ASSOC);
+            $data = $find_obj->fetch();
+            $served_per_hour[$i] = $data['total'];
+        } ?>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Time', 'Footfall per hour'],
+                    ['7 am', <?php echo $served_per_hour[0];?>],
+                    ['8 am', <?php echo $served_per_hour[1];?>],
+                    ['9 am', <?php echo $served_per_hour[2];?>],
+                    ['10 am', <?php echo $served_per_hour[3];?>],
+                    ['11 am', <?php echo $served_per_hour[4];?>],
+                    ['12 am', <?php echo $served_per_hour[5];?>],
+                    ['1 pm', <?php echo $served_per_hour[6];?>],
+                    ['2 pm', <?php echo $served_per_hour[7];?>],
+                    ['3 pm', <?php echo $served_per_hour[8];?>],
+                    ['4 pm', <?php echo $served_per_hour[9];?>],
+                    ['5 pm', <?php echo $served_per_hour[10];?>],
+                    ['6 pm', <?php echo $served_per_hour[11];?>],
+                    ['7 pm', <?php echo $served_per_hour[12];?>],
+                    ['8 pm', <?php echo $served_per_hour[13];?>],
+                    ['9 pm', <?php echo $served_per_hour[14];?>],
+                ]);
+
+                var options = {
+                    title: 'Hourly Analytics',
+                    hAxis: {title: 'Time of the day', titleTextStyle: {color: '#333'}},
+                    vAxis: {minValue: 0}
+                };
+
+                var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            }
+        </script>
+    </head>
+    <body style="overflow-x: hidden">
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="navbar-heading" style="font-family: 'Indie Flower', cursive;"> &nbsp;Smart Q Lab</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/logout/"><i class="material-icons left">subdirectory_arrow_right</i>Log Out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="title_box">
+        <h4 id="title_qit">Dashboard</h4>
+    </div>
+    <div class="container-fluid">
+        <div class="row" id="animate_row" style="padding-bottom:-10px;">
+            <div class="reload">
+                <div class="col s4">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card-panel moveUp">
+                                <div class="row">
+                                    <div class="col s12 middle">
+                                        Waiting Customer Count
+                                    </div>
+                                    <hr>
+                                    <div class="col s12 middle">
+                                        <?php
+                                        $sql_statement = "SELECT COUNT(*) AS total FROM " . $dbname . ".live_queue WHERE storeuid = :sid AND counteruid = :cid LIMIT 1";
+                                        $obj = $mysql_conn->prepare($sql_statement);
+                                        $obj->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
+                                        $obj->bindParam(':cid', $_SESSION['counteruid'], PDO::PARAM_INT);
+                                        $obj->execute();
+                                        $obj->setFetchMode(PDO::FETCH_ASSOC);
+                                        $data = $obj->fetch();
+                                        echo $data['total'];
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card-panel moveUp">
+                                <div class="row">
+                                    <div class="col s12 middle">
+                                        Total customer Today
+                                    </div>
+                                    <hr>
+                                    <div class="col s12 middle">
+                                        <?php
+                                        $sql_statement = "SELECT COUNT(*) AS total FROM " . $dbname . ".analytics WHERE storeuid = :sid AND counteruid = :cid AND date(now()) = date(time)";
+                                        $obj = $mysql_conn->prepare($sql_statement);
+                                        $obj->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
+                                        $obj->bindParam(':cid', $_SESSION['counteruid'], PDO::PARAM_INT);
+                                        $obj->execute();
+                                        $obj->setFetchMode(PDO::FETCH_ASSOC);
+                                        $data = $obj->fetch();
+                                        echo $data['total'];
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card-panel moveUp">
+                                <div class="row">
+                                    <div class="col s12 middle">
+                                        Bouncing off customers
+                                    </div>
+                                    <hr>
+                                    <div class="col s12 middle">
+                                        <?php
+                                        $sql_statement = "SELECT COUNT(*) AS total FROM " . $dbname . ".bounced WHERE storeuid = :sid AND counteruid = :cid AND date(now()) = date(time)";
+                                        $obj = $mysql_conn->prepare($sql_statement);
+                                        $obj->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
+                                        $obj->bindParam(':cid', $_SESSION['counteruid'], PDO::PARAM_INT);
+                                        $obj->execute();
+                                        $obj->setFetchMode(PDO::FETCH_ASSOC);
+                                        $data = $obj->fetch();
+                                        echo $data['total'];
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br><br><br><br><br><br>
+            <div class="titlePush" style="border: 1px solid #002642; background-color: white">
+                <div class="row">
+                    <div class="col s4">
+                        <div id="_serving">
+
+                        </div>
+                    </div>
+                    <div class="col s3">
+                        <h7 class="middle-colored" style="margin-bottom: 50px"><b>Orders Queued</b></h7>
+                    </div>
+                    <div class="col s2">
+                        <button class="waves-effect waves-light btn"
+                                style="padding-bottom: 10px; background-color: green" id="serve"
+                                onclick="serveToggle()">Serving On
+                        </button>
+                        <button class="waves-effect waves-light btn"
+                                style="padding-bottom: 10px; display:  block; background-color: red; display: none"
+                                id="serve2" onclick="serveToggle()">Serving Off
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row" id="dashboardMain">
+            <div class="col s2">
+                <div class="row">
+                    <div class="col s12">
+                        <br><br><br>
+                        <div class="card-panel2  middle enhanceUI">
+                            <p class="showBlue" id="otp_header"></p>
+                            <hr>
+                            <span class="text" style="font-size: 16px; color:#291a44  "><b>Queue number</b></span>
+
+                            <br>
+                            <input type="number" name="getOTP" value="" id="getOTP" placeholder="Enter OTP"
+                                   class="showBlue">
+                            <button class="btn waves-effect waves-light" name="action" id="otp_but">Confirm
+                                <i class="material-icons right">send</i>
+                            </button>
+                            <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s7">
+                <div class="card-panel card-queueList" style="background-color: white">
+                    <table class="orderList bordered centered scrollTable" id="queuetable">
+                        <thead>
+                        <tr>
+                            <th>Serial Number</th>
+                            <th>Queue Number</th>
+                            <th>Name</th>
+                            <th>Queue Code</th>
+                            <th>Operations</th>
+                        </tr>
+                        </thead>
+
+                        <tbody id="queue_repeat">
+                        <!--    Repeat Start-->
+
+                        <!--      Repeat End-->
+
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="row" id="counterSend" style="display: none">
+                        <form class="" action="" method="" style="padding-bottom: 50px;">
+                            <div class="col s9">
+                                <select class="browser-default" style="padding-top: 10px; width: 400px"
+                                        id="counter_shift">
+                                    <option value="" disabled selected>Choose counter number</option>
+                                    <?php
+                                    $counter_no = array();
+                                    $sql_statement = "SELECT * FROM " . $dbname . ".counter WHERE storeuid = :sid AND counteruid != :cid ORDER BY counteruid";
+                                    $find_querry = $mysql_conn->prepare($sql_statement);
+                                    $find_querry->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
+                                    $find_querry->bindParam(':cid', $_SESSION['counteruid'], PDO::PARAM_INT);
+                                    $find_querry->setFetchMode(PDO::FETCH_ASSOC);
+
+                                    try {
+                                        $find_querry->execute();
+                                    while ($temp = $find_querry->fetch()):
+                                        ?>
+                                        <option value="<?php echo $temp['counteruid']; ?>">
+                                            Counter <?php echo $temp['counteruid']; ?> </option>
+                                    <?php
+                                    endwhile;
+                                    }catch (PDOException $e)
+                                    {
+                                    ?>
+                                        <script>
+                                            swal('Fatal Error!', 'PDO Exception Counter:<?php echo $e->getMessage();?>', 'error');
+                                        </script>
+                                        <?php
+                                    }
+                                    ?>
+
+
+                                </select>
+                            </div>
+                            <div class="col s3">
+                                <a class="waves-effect waves-light btn" style="margin-right: 40px;" id="counterDone">Done</a>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col s2">
+                <div class="container-fluid" style="paddinng-right: 50px;">
+                    <div id="curve_chart" style="width: 290px; height: 210px"></div>
+                    <hr style="width: 290px;">
+                    <div id="chart_div" style="width: 290px; height: 210px; "></div>
+                </div>
+            </div>
+        </div>
+        <div class="btn-grp">
+            <?php
+            #Total Served Today
+            $sql_statement = "SELECT COUNT(*) AS total FROM " . $dbname . ".counter WHERE storeuid = :sid";
+            $find_obj = $mysql_conn->prepare($sql_statement);
+            $find_obj->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
+            $find_obj->execute();
+            $data = $find_obj->fetch();
+            $total_counters = $data['total'];
+
+            for ($i = 1; $i <= $total_counters; ++$i):
+                $sql_statement = "SELECT COUNT(*) AS total FROM " . $dbname . ".live_queue WHERE storeuid = :sid AND counteruid = :cid";
+                $find_obj = $mysql_conn->prepare($sql_statement);
+                $find_obj->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
+                $find_obj->bindParam(':cid', $i, PDO::PARAM_INT);
+                $find_obj->execute();
+                $data = $find_obj->fetch();
+                $data_live = $data['total'];
+
+                $sql_statement = "SELECT ceil(avg(wait)) AS total FROM " . $dbname . ".analytics WHERE storeuid = :sid AND counteruid = :cid";
+                $find_obj = $mysql_conn->prepare($sql_statement);
+                $find_obj->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
+                $find_obj->bindParam(':cid', $i, PDO::PARAM_INT);
+                $find_obj->execute();
+                $data_ana = $find_obj->fetch();
+                $data_wait = $data_ana['total'];
+                ?>
+                <a class="btn tooltip" data-position="top" data-delay="50"
+                   data-tooltip="I am a tooltip"><b>Counter-<?php echo $i; ?>:</b>
+                    <?php
+                    echo $data_live;
+                    ?><span class="tooltiptext">
+                    <?php
+                    if (isset($data_wait))
+                        echo $data_wait;
+                    else
+                        echo "0";
+                    ?>
+                        mins
+                </span>
+                </a>
+
+                <?php
+            endfor;
+            ?>
+
+
+        </div>
+    </div>
+
+    <script src="/js/seller_dash.js"></script>
+    <script src="/js/material_shit.js"></script>
+
+    </body>
+    </html>
+    <?php
+} else {
+    session_destroy();
+    header('Location: /main/');
+    die();
+}
+?>
