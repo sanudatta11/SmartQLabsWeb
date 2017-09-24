@@ -85,7 +85,7 @@ if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && c
 
                $temp['text']= "Your Queue Position is ".$queue_pos.".";
                array_push($new_data['messages'],$temp);
-               $temp['text']= "Your Average Time is ".$avg_time.".";
+               $temp['text']= "Your Average Time is ".floor($avg_time/2).".";
                array_push($new_data['messages'],$temp);
                echo json_encode($new_data);
                die();
