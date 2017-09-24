@@ -5,8 +5,8 @@ require_once("templates/header_template.php");
 
 if(isset($_SESSION["admin"]))
 {
-  header("Location: landing.php");
-  die();
+    header('Location: /main/dash/');
+    die();
 }
 ?>
 <!-- /Section: intro -->
