@@ -49,11 +49,10 @@ if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && c
    $sql_update->bindParam(':otp',$_GET['otp'],PDO::PARAM_INT);
    try{
        $sql_update->execute();
+       $data_cust = $sql_update->fetch();
        if($sql_update->rowCount() > 0)
        {
            $temp['stat'] = $sql_update;
-            $data_cust = $sql_update->fetch();
-
             //Get Queue Status
            $sql_update = $mysql_conn->prepare('SELECT COUNT(*) as count FROM '.$dbname.'.live_queue WHERE serial <= :serial AND storeuid = :sid AND counteruid = :cid');
            $sql_update->bindParam(':sid',$data_cust['storeuid'],PDO::PARAM_INT);
