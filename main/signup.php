@@ -168,60 +168,6 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dependencies/check.php';
                         </div>
                         <br>
                         <hr>
-                        <div class="boxed-grey">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="Cnum">
-                                            Credit Card Number</label>
-                                        <input type="number" name="cardnum" class="form-control" id="cardnum"
-                                               placeholder="Enter card number" data-rule="minlen:4"
-                                               data-msg="Please enter at least 4 chars"/>
-                                        <div class="validation"></div>
-                                    </div>
-
-                                    <div class="form-group">
-
-
-                                        <div class="form-group">
-                                            <label for="customer">Bank Name: </label>
-                                            <select class="form-control" id="Bname" name="Bname">
-                                                <option value="SBI">State Bank of India</option>
-                                                <option value="OBC">Oriemtal Bank of Commerce</option>
-                                                <option value="HDFC">HDFC</option>
-                                                <option value="PNB">Punjab National Bank</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="cvv">
-                                            CVV</label>
-                                        <input type="number" name="cvv" class="form-control" id="cvv"
-                                               placeholder="Enter CVV"/>
-                                        <div class="validation"></div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="desg">
-                                            Expiration Date</label>
-                                        <input type="date" name="expdate" class="form-control" id="expdate"
-                                               placeholder=" Contact Number" data-rule="minlen:6"
-                                               data-msg="Please enter at least 6 chars"/>
-                                        <div class="validation"></div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-skin pull-right" id="btnContactUs"
-                                            name="btnContactUs">
-                                        Submit!
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>
