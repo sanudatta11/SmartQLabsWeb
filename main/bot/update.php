@@ -24,8 +24,8 @@ if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && c
        $sql_update->execute();
        if($sql_update->rowCount() > 0)
        {
-           $temp = $sql_update->fetch();
-           $storeuid = $temp['storeuid'];
+           $temp_d = $sql_update->fetch();
+           $storeuid = $temp_d['storeuid'];
        }
        else{
            //No Counter or Store Found
