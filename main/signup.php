@@ -165,9 +165,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dependencies/check.php';
                                        placeholder="Re-enter Password" data-rule="minlen:8"
                                        data-msg="Please enter at least 8 chars"/>
                             </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-skin pull-right" id="btnContactUs"
+                                        name="btnContactUs">
+                                    Submit!
+                                </button>
+                            </div>
                         </div>
                         <br>
                         <hr>
+
                     </form>
                 </div>
             </div>
