@@ -3,7 +3,7 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/dependencies/check.php';
 require_once("templates/header_template.php");
 
-if(isset($_SESSION["admin"])
+if(isset($_SESSION["admin"]))
 {
   header("Location: landing.php");
   die();
