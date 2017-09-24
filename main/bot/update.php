@@ -70,8 +70,10 @@ if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && c
                $find_query->bindParam(':cid', $data_cust['counteruid'], PDO::PARAM_INT);
                $find_query->execute();
                $find_query->setFetchMode(PDO::FETCH_ASSOC);
+               $avg_time = 0;
                try{
-                   $temp = $find_query->fetch();
+                   $temp_d = $find_query->fetch();
+                   $avg_time = $temp_d['wait'];
                }catch (PDOException $e)
                {
                    //PDO Exception
@@ -80,8 +82,6 @@ if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && c
                    echo json_encode($new_data);
                    die();
                }
-
-               $avg_time = $temp['wait'];
 
                $temp['text']= "Your Queue Position is ".$queue_pos.".";
                array_push($new_data['messages'],$temp);
