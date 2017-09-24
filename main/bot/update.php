@@ -51,6 +51,7 @@ if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && c
        $sql_update->execute();
        if($sql_update->rowCount() > 0)
        {
+           $temp['stat'] = $sql_update;
             $data_cust = $sql_update->fetch();
 
             //Get Queue Status
