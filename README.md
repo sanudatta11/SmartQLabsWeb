@@ -20,13 +20,15 @@ We have an aggregation of web-apps, android apps, progressive web app and a web 
 
 <ul>
 <li> Front End : Materialize CSS, jQuery, AJAX, JSON, open source JS QR libraries </li>
-<li> Backend: PHP </li>
+<li> Backend: PHP / MySQL </li>
 <li> Android </li>
 <li> DevOps: AWS </li>
 </ul>
 
 
 ## Infosys Hackathon 1st Prize at Chandigarh
+
+Find us at < a href = "https://smartqlabs.com">https://smartqlabs.com</a>
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb?ref=badge_shield)
 <div>
