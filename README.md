@@ -38,9 +38,7 @@ We have an aggregation of web-apps, android apps, progressive web app and a web 
   <img src="https://img.shields.io/uptimerobot/ratio/7/m778918918-3e92c097147760ee39d02d36.svg"></a>
 </div>
 <br><br>
-<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fsanudatta11%2F
-
-QLabsWeb?ref=badge_large" alt="FOSSA Status">
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fsanudatta11%2FQLabsWeb?ref=badge_large" alt="FOSSA Status">
 
 
 
