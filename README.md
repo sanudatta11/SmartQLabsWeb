@@ -34,6 +34,7 @@ We have an aggregation of web-apps, android apps, progressive web app and a web 
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb?ref=badge_shield)
 <img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb.svg?type=large"></a>
+<br>
 <div>
   <img src="https://img.shields.io/packagist/l/doctrine/orm.svg"></a>
   <img src="https://img.shields.io/pypi/wheel/Django.svg"></a>
