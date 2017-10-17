@@ -39,8 +39,4 @@ We have an aggregation of web-apps, android apps, progressive web app and a web 
 </div>
 <br><br>
 <a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fsanudatta11%2FQLabsWeb?ref=badge_large" alt="FOSSA Status">
-
-
-
-
 <img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb.svg?type=large"></a>
