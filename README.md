@@ -9,11 +9,11 @@
   <img src="https://img.shields.io/uptimerobot/ratio/7/m778918918-3e92c097147760ee39d02d36.svg"></a>
 </div>
 <br><br>
-<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb?ref=badge_large" alt="FOSSA Status">
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb?ref=badge_large" alt="FOSSA Status"></a>
 
 ## What is SmartQLabs?
 
-<i>Tired and frustrated after waiting for long hours in long queues? </i>
+<i>Tired and frustrated after waiting for long hours in long queues? </i> <br>
 We at <b>"Smart QLabs"</b> provide innovative crowd and queue management solutions. 
 We have an aggregation of web-apps, android apps, progressive web app and a web platform that serves the purpose.
 
