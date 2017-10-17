@@ -1,4 +1,4 @@
-
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsanudatta11%2FSmartQLabsWeb?ref=badge_shield)
 <h1>Smart Queue Labs</h1>
 <div>
   
