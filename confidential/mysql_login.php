@@ -7,9 +7,9 @@
  */
 
 //Production
-$host = "qit.co8zric1dcsi.us-east-1.rds.amazonaws.com:3306";
-$dbname = "qit";
-$username_db = "root";
+$host = "localhost";
+$dbname = "id4100767_smartqlabs";
+$username_db = "id4100767_smartqlabs";
 $password_db = "mysqlmysql";
 
 //Testing
