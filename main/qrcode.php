@@ -54,7 +54,7 @@ if (isset($_SESSION) && $_SESSION['admin'] == 1) {
                 </div>
                 <div class="card-content" id="moveTopmost" style="text-align: center">
                     <br>
-                    Scan the QR code to queue yourself on the virtual queue. <br> With QIt say no to Queue.</p>
+                    Scan the QR code to queue yourself on the virtual queue. <br> With ".$dbname." say no to Queue.</p>
                 </div>
                 <div class="card-action">
                     <a href="#" style="margin-left: 45%;" onclick="window.print();">Page Print</a>

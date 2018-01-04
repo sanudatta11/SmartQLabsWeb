@@ -48,7 +48,7 @@ if ($_SESSION['admin'] == 1):
         </nav>
     </div>
     <div class="title_box">
-        <h4 id="title_qit">Counter Management</h4>
+        <h4 id="title_".$dbname."">Counter Management</h4>
     </div>
     <div class="container-fluid">
         <div class="row" id="animate_row" style="padding-bottom:-10px;">

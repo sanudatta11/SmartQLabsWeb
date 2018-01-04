@@ -191,7 +191,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/dependencies/check.php';
 
                     <address>
                         <strong>Email</strong><br>
-                        <a href="mailto:#">bisso.banerjee@qit.tech</a>
+                        <a href="mailto:#">bisso.banerjee@".$dbname.".tech</a>
                     </address>
                     <address>
                         <strong>We're on social networks</strong><br>
