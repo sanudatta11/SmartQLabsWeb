@@ -8,6 +8,7 @@
 session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/confidential/connector.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/dependencies/loggedin.php';
+echo $_SESSION;
 if ($_SESSION['admin'] == 1) {
     ?>
     <html>
