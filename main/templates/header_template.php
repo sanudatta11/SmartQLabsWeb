@@ -78,7 +78,7 @@
 
     </style>
     <script src="https://unpkg.com/sweetalert2@7.15.1/dist/sweetalert2.all.js"></script>
-    <link rel="stylesheet" href="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/sweetalert2@7.15.1/dist/sweetalert2.all.js">
 
 </head>
 
