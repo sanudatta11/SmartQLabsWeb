@@ -286,6 +286,7 @@ if (isset($_SESSION['error'])):
     ?>
     <script>
         console.log(<?php echo htmlspecialchars($_SESSION['error'])?>);
+        console.log("Hello");
         swal('Sorry!', '<?php
             echo htmlspecialchars($_SESSION['error']);
             ?>', 'error');
