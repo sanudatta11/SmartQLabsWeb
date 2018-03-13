@@ -6,4 +6,4 @@
  * Time: 4:54 PM
  */
 session_start();
-echo $_SESSION;
+echo print_r($_SESSION);
