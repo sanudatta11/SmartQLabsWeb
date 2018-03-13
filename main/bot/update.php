@@ -9,7 +9,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/confidential/connector.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/dependencies/check.php';
 $new_data = array();
 $new_data['messages'] = array();
-if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && check($_GET['otp']))
+if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['otp']))
 {
 
    /*
@@ -42,9 +42,8 @@ if(check($_GET['qr_data']) && check($_GET['email']) && check($_GET['name']) && c
        echo json_encode($new_data);
        die();
    }
-   $sql_update = $mysql_conn->prepare('SELECT * FROM '.$dbname.'.live_queue WHERE storeuid = :sid AND customer_name = :cname AND customer_email = :cmail AND otp = :otp LIMIT 1');
+   $sql_update = $mysql_conn->prepare('SELECT * FROM '.$dbname.'.live_queue WHERE storeuid = :sid AND customer_email = :cmail AND otp = :otp LIMIT 1');
    $sql_update->bindParam(':sid',$storeuid,PDO::PARAM_INT);
-   $sql_update->bindParam(':cname',$_GET['name'],PDO::PARAM_STR);
    $sql_update->bindParam(':cmail',$_GET['email'],PDO::PARAM_STR);
    $sql_update->bindParam(':otp',$_GET['otp'],PDO::PARAM_INT);
    try{
