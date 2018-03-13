@@ -285,6 +285,7 @@ if(isset($_SESSION["admin"]))
 if (isset($_SESSION['error'])):
     ?>
     <script>
+        console.log(htmlspecialchars($_SESSION['error']));
         swal('Sorry!', '<?php
             echo htmlspecialchars($_SESSION['error']);
             ?>', 'error');
