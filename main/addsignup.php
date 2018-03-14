@@ -170,7 +170,7 @@ if (!isset($_SESSION['success'])):
 
                         <address>
                             <strong>Email</strong><br>
-                            <a href="mailto:#">bisso.banerjee@qit.tech</a>
+                            <a href="mailto:#">bisso.banerjee@".$dbname.".tech</a>
                         </address>
                         <address>
                             <strong>We're on social networks</strong><br>
@@ -204,7 +204,7 @@ if ($_SESSION['success'] == True):
     ?>
     <h1 style="color: #83e861; padding-left: 40px; font-family: 'Shadows Into Light', cursive;" class="animated bounce">
         <b>Success!
-            Thanks for joining QIt</b></h1>
+            Thanks for joining ".$dbname."</b></h1>
     <?php
     unset($_SESSION['success']);
 endif;

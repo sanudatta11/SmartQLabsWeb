@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: root
  * Date: 22/09/17
- * Time: 9:40 AM
+ * Time: 9:40 PM
  */
 
 /*
@@ -339,7 +339,7 @@ if (check($_GET['email']) && check($_GET['qr_data']) && check($_GET['name'])) {
                 array_push($new_data['messages'],$temp);
                 $temp['text'] = "Your Queue Code is ".$data['queue_code'];
                 array_push($new_data['messages'],$temp);
-                $temp['text'] = "Your Position is ".$data['queue']['queue_no'];
+                $temp['text'] = "Your Position is ".$qid;
                 array_push($new_data['messages'],$temp);
                 $temp['text'] = "Your Counter Id is ".$data['queue']['counter_id'];
                 array_push($new_data['messages'],$temp);

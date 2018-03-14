@@ -77,8 +77,8 @@
         }
 
     </style>
-    <script src="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.js"></script>
-    <link rel="stylesheet" href="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 
 </head>
 

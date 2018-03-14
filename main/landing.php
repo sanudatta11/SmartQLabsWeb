@@ -102,7 +102,7 @@ if ($_SESSION['admin'] == 1) {
         $served_per_hour = array();
         $begin = 0;
         for ($i = 0; $i < 24; ++$i, ++$begin) {
-            $sql_statement = "SELECT COUNT(*) AS total FROM qit.analytics WHERE storeuid = :sid AND time >=:start AND time < :end";
+            $sql_statement = "SELECT COUNT(*) AS total FROM ".$dbname.".analytics WHERE storeuid = :sid AND time >=:start AND time < :end";
             $find_obj = $mysql_conn->prepare($sql_statement);
             $find_obj->bindParam(':sid', $_SESSION['storeuid']);
             $start = ($date . ' ' . '0' . $begin . ':00:00');
@@ -173,7 +173,7 @@ if ($_SESSION['admin'] == 1) {
             $start = 1;
         $tot = 0;
         for ($i = $start; $i <= $today; ++$i, ++$tot) {
-            $sql_statement = "SELECT COUNT(*) AS total FROM qit.analytics WHERE storeuid = :sid AND year(time) = year(now()) AND month(time) = month(now()) AND day(time) = :day";
+            $sql_statement = "SELECT COUNT(*) AS total FROM ".$dbname.".analytics WHERE storeuid = :sid AND year(time) = year(now()) AND month(time) = month(now()) AND day(time) = :day";
             $find_obj = $mysql_conn->prepare($sql_statement);
             $find_obj->bindParam(':day', $i);
             $find_obj->bindParam(':sid', $_SESSION['storeuid']);
@@ -305,7 +305,7 @@ if ($_SESSION['admin'] == 1) {
         </nav>
     </div>
     <div class="title_box">
-        <h4 id="title_qit">Analytics</h4>
+        <h4 id="title_".$dbname."">Analytics</h4>
     </div>
     <div class="container-fluid">
         <div class="row" id="animate_row" style="padding-bottom:-10px;">
@@ -405,7 +405,7 @@ if ($_SESSION['admin'] == 1) {
                             <br>
                             <?php
                             #Total Wait time Today
-                            $sql_statement = "SELECT ceil(avg(wait)) AS wait FROM qit.analytics WHERE storeuid = :sid";
+                            $sql_statement = "SELECT ceil(avg(wait)) AS wait FROM ".$dbname.".analytics WHERE storeuid = :sid";
                             $find_obj = $mysql_conn->prepare($sql_statement);
                             $find_obj->bindParam(':sid', $_SESSION['storeuid'], PDO::PARAM_INT);
                             $find_obj->execute();
@@ -596,7 +596,7 @@ if ($_SESSION['admin'] == 1) {
         $served_per_hour = array();
         $begin = 7;
         for ($i = 0; $i < 15; ++$i, ++$begin) {
-            $sql_statement = "SELECT COUNT(*) AS total FROM qit.analytics WHERE storeuid = :sid AND time >=:start AND time < :end";
+            $sql_statement = "SELECT COUNT(*) AS total FROM ".$dbname.".analytics WHERE storeuid = :sid AND time >=:start AND time < :end";
             $find_obj = $mysql_conn->prepare($sql_statement);
             $find_obj->bindParam(':sid', $_SESSION['storeuid']);
             $start = ($date . ' ' . '0' . $begin . ':00:00');
@@ -655,7 +655,7 @@ if ($_SESSION['admin'] == 1) {
         </nav>
     </div>
     <div class="title_box">
-        <h4 id="title_qit">Dashboard</h4>
+        <h4 id="title_".$dbname."">Dashboard</h4>
     </div>
     <div class="container-fluid">
         <div class="row" id="animate_row" style="padding-bottom:-10px;">
